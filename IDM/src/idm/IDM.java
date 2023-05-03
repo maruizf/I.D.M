@@ -1,20 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package idm;
 
-/**
- *
- * @author ildef
- */
-public class IDM {
+import java.sql.Connection;
+import java.sql.SQLException;
 
-    /**
-     * @param args the command line arguments
-     */
+public class IDM {
     public static void main(String[] args) {
-        // TODO code application logic here
+        try {
+            Connection conexion = ConexionBD.conectar();
+            // Aquí puedes ejecutar tus consultas SQL
+            conexion.close(); // No olvides cerrar la conexión cuando termines
+        } catch (SQLException e) {
+            System.out.println("Error al conectarse a la base de datos: " + e.getMessage());
+        }
     }
-    
 }
